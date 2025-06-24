@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mr/core/navigation_bar/navigation_bar_Admin.dart';
 import 'package:mr/core/network/local/cache_helper.dart';
 import 'package:mr/core/widgets/constant.dart';
-import 'package:mr/features/admin/view/home_admin.dart';
 import 'package:mr/features/auth/cubit/cubit.dart';
 import 'package:mr/features/auth/cubit/states.dart';
 import 'package:mr/features/auth/view/register.dart';
@@ -12,7 +11,6 @@ import 'package:mr/features/user/view/home.dart';
 
 import '../../../core/ navigation/navigation.dart';
 import '../../../core/styles/themes.dart';
-import '../../../core/widgets/circular_progress.dart';
 import '../../../core/widgets/custom_form_field.dart';
 
 class Login extends StatelessWidget {
@@ -93,7 +91,7 @@ class Login extends StatelessWidget {
                                     ),
                                     SizedBox(height: 24,),
                                     CustomFormField(
-                                      suffixIcon:  Icon(Icons.person_outlined),
+                                      suffixIcon:  Icon(Icons.phone_outlined),
                                       colorBorderContent: Colors.white,
                                       controller: userNameController,
                                       validationPassed: isValidationPassed,
@@ -101,10 +99,10 @@ class Login extends StatelessWidget {
                                         if (value!.isEmpty) {
                                           isValidationPassed = true;
                                           cubit.validation();
-                                          return 'رجائا ادخل الايميل';
+                                          return 'رجائا ادخل رقم الهاتف';
                                         }
                                       },
-                                      hintText: 'ادخل الايميل',
+                                      hintText: 'رقم الهاتف',
                                     ),
                                     SizedBox(height: 16,),
                                     CustomFormField(
